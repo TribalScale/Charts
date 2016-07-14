@@ -123,6 +123,8 @@ public class HorizontalBarChartRenderer: BarChartRenderer
                     CGContextSetLineWidth(context, borderWidth)
                     CGContextStrokeRect(context, barRect)
                 }
+                
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification.init(name: "HorizontalChartBarRect", object: NSValue.init(CGRect: barRect)))
             }
             else
             {
@@ -232,6 +234,8 @@ public class HorizontalBarChartRenderer: BarChartRenderer
                         CGContextSetLineWidth(context, borderWidth)
                         CGContextStrokeRect(context, barRect)
                     }
+                    
+                    NSNotificationCenter.defaultCenter().postNotification(NSNotification.init(name: "HorizontalChartBarRect", object: NSValue.init(CGRect: barRect)))
                 }
             }
         }
